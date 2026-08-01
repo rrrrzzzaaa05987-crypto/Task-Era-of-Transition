@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tailwind</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- هدا مكتبة تعت الشعارات  -->
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/output.css">
 </head>
 
@@ -22,8 +26,8 @@
             </div>
 
             <ul class="flex items-center gap-6 text-sm font-semibold" dir="rtl">
-                <li><a href="#" class="hover:opacity-80 transition-opacity">الرئيسية</a></li>
-                <li><a href="#" class="hover:opacity-80 transition-opacity">من نحن</a></li>
+                <li><a href="index.html" class="hover:opacity-80 transition-opacity">الرئيسية</a></li>
+                <li><a href="About_As.html" class="hover:opacity-80 transition-opacity">من نحن</a></li>
                 <li>
                     <a href="#" class="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
                         <span>الاستضافة والسيرفرات</span>
@@ -37,10 +41,10 @@
                 <li><a href="#" class="hover:opacity-80 transition-opacity">تصميم المواقع</a></li>
                 <li><a href="#" class="hover:opacity-80 transition-opacity">برمجة التطبيقات</a></li>
                 <li><a href="#" class="hover:opacity-80 transition-opacity">السايبر سيكيورتي</a></li>
-                <li><a href="#" class="hover:opacity-80 transition-opacity">تواصل معنا</a></li>
+                <li><a href="Contact_us.html" class="hover:opacity-80 transition-opacity">تواصل معنا</a></li>
             </ul>
             <div>
-                <a href="#"
+                <a href="logn.html"
                     class="bg-[#a29bf3] hover:bg-[#8f88e6] text-white text-sm font-bold px-6 py-2 rounded-full transition-colors shadow-sm inline-block">
                     تسجيل الدخول
                 </a>
@@ -841,81 +845,278 @@
     </section>
     <!-- نهاية خدمتنا section  -->
 
+    <!-- بداية قسم الأسئلة الشائعة -->
+    <section class="w-full bg-white py-16 px-4 sm:px-6 lg:px-8" dir="rtl">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
+            <!-- عمود الأسئلة الشائعة (اليمين) -->
+            <div class="space-y-4">
 
-    <section class="max-w-6xl mx-auto px-4 py-12" dir="rtl">
-
-        <!-- العناوين الرئيسية -->
-        <div class="text-center mb-10">
-            <span class="text-xs text-gray-500 block mb-1">إنجازاتنا</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-[#1d2558] mb-2">نماذج من نجاحنا التقني</h2>
-            <p class="text-sm text-gray-500">منصات مبتكرة وحلول فعالة تخدم المجتمع وتطوّر العمل</p>
-        </div>
-
-        <!-- شبكة البطاقات (CSS Grid Responsive) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <!-- بطاقة 1 -->
-            <div
-                class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group flex flex-col justify-between">
-                <div class="overflow-hidden rounded-xl bg-gray-50 border border-gray-100 mb-4 h-64">
-                    <img src="https://via.placeholder.com/400x500" alt="شركة وثر"
-                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+                <!-- السؤال الأول (مفتوح افتراضيًا) -->
+                <div class="faq-item active bg-[#f5f6f8] rounded-2xl p-5 transition-all duration-300">
+                    <button class="faq-btn w-full flex items-center justify-between text-right focus:outline-none">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="p-2 bg-white rounded-xl shadow-sm text-gray-700 flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </span>
+                            <h3 class="text-base sm:text-lg font-bold text-gray-800">ما هي الخدمات التي يقدمها عصر
+                                التحول؟</h3>
+                        </div>
+                        <span class="icon text-2xl font-light text-gray-700 select-none">−</span>
+                    </button>
+                    <div class="faq-answer overflow-hidden transition-all duration-300 max-h-40 mt-3">
+                        <p class="text-sm sm:text-base text-gray-500 leading-relaxed border-t border-gray-200/50 pt-3">
+                            نحن نقدم تصميم المواقع والتطبيقات، برمجة المتاجر الإلكترونية، استضافة المواقع، وحلول الأمن
+                            السيبراني.
+                        </p>
+                    </div>
                 </div>
-                <div class="flex items-center justify-between pt-1">
-                    <span class="font-bold text-gray-800 text-sm">شركة وثر</span>
-                    <a href="#"
-                        class="p-1.5 rounded-lg bg-gray-50 text-gray-400 group-hover:text-[#2a527c] transition-colors">
-                        <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
+
+                <!-- السؤال الثاني -->
+                <div class="faq-item bg-[#f5f6f8] rounded-2xl p-5 transition-all duration-300">
+                    <button class="faq-btn w-full flex items-center justify-between text-right focus:outline-none">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="p-2 bg-white rounded-xl shadow-sm text-gray-700 flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </span>
+                            <h3 class="text-base sm:text-lg font-bold text-gray-800">كيف يمكنني اختيار الباقة المناسبة
+                                لي؟</h3>
+                        </div>
+                        <span class="icon text-2xl font-light text-gray-700 select-none">+</span>
+                    </button>
+                    <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                        <p class="text-sm sm:text-base text-gray-500 leading-relaxed border-t border-gray-200/50 pt-3">
+                            يمكنك التواصل مع فريق الدعم الفني لمساعدتك في اختيار الباقة التي تناسب حجم مشروعك واحتياجاتك
+                            الفلية.
+                        </p>
+                    </div>
                 </div>
+
+                <!-- السؤال الثالث -->
+                <div class="faq-item bg-[#f5f6f8] rounded-2xl p-5 transition-all duration-300">
+                    <button class="faq-btn w-full flex items-center justify-between text-right focus:outline-none">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="p-2 bg-white rounded-xl shadow-sm text-gray-700 flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </span>
+                            <h3 class="text-base sm:text-lg font-bold text-gray-800">هل تقدمون دعمًا فنيًا بعد إطلاق
+                                المشروع؟</h3>
+                        </div>
+                        <span class="icon text-2xl font-light text-gray-700 select-none">+</span>
+                    </button>
+                    <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                        <p class="text-sm sm:text-base text-gray-500 leading-relaxed border-t border-gray-200/50 pt-3">
+                            نعم، نوفر دعمًا فنيًا وصيانة دورية لضمان عمل موقعك أو تطبيقك بأعلى كفاءة وبدون أي انقطاع.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- السؤال الرابع -->
+                <div class="faq-item bg-[#f5f6f8] rounded-2xl p-5 transition-all duration-300">
+                    <button class="faq-btn w-full flex items-center justify-between text-right focus:outline-none">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="p-2 bg-white rounded-xl shadow-sm text-gray-700 flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </span>
+                            <h3 class="text-base sm:text-lg font-bold text-gray-800">كم يستغرق تنفيذ تصميم الموقع أو
+                                التطبيق؟</h3>
+                        </div>
+                        <span class="icon text-2xl font-light text-gray-700 select-none">+</span>
+                    </button>
+                    <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                        <p class="text-sm sm:text-base text-gray-500 leading-relaxed border-t border-gray-200/50 pt-3">
+                            يعتمد الوقت على حجم ومتطلبات المشروع، وتتراوح المدة عادةً بين أسبوعين إلى 6 أسابيع.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- السؤال الخامس -->
+                <div class="faq-item bg-[#f5f6f8] rounded-2xl p-5 transition-all duration-300">
+                    <button class="faq-btn w-full flex items-center justify-between text-right focus:outline-none">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="p-2 bg-white rounded-xl shadow-sm text-gray-700 flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                            </span>
+                            <h3 class="text-base sm:text-lg font-bold text-gray-800">هل يمكن ترقية الباقة في أي وقت؟
+                            </h3>
+                        </div>
+                        <span class="icon text-2xl font-light text-gray-700 select-none">+</span>
+                    </button>
+                    <div class="faq-answer overflow-hidden transition-all duration-300 max-h-0">
+                        <p class="text-sm sm:text-base text-gray-500 leading-relaxed border-t border-gray-200/50 pt-3">
+                            بالتأكيد، يمكنك الترقية إلى أي باقة أعلى في أي وقت بكل سهولة ودون الحاجة للتوقف عن العمل.
+                        </p>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- بطاقة 2 -->
-            <div
-                class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group flex flex-col justify-between">
-                <div class="overflow-hidden rounded-xl bg-gray-50 border border-gray-100 mb-4 h-64">
-                    <img src="https://via.placeholder.com/400x500" alt="جمعية وسق"
-                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="flex items-center justify-between pt-1">
-                    <span class="font-bold text-gray-800 text-sm">جمعية وسق</span>
-                    <a href="#"
-                        class="p-1.5 rounded-lg bg-gray-50 text-gray-400 group-hover:text-[#2a527c] transition-colors">
-                        <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
-                </div>
+            <!-- عمود النص والزر (اليسار) -->
+            <div class="order-first lg:order-last text-right lg:py-4">
+                <span class="text-gray-400 font-medium text-sm block mb-2">الأسئلة الشائعة</span>
+                <h2
+                    class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-[#3ba59a] to-[#2c72b0] mb-4">
+                    كل ما تحتاج لمعرفته
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                    هذه الأسئلة الأكثر شيوعًا عنا.<br>
+                    لم تتمكن من العثور على ما تبحث عنه؟
+                </p>
+                <a href="#"
+                    class="inline-block px-7 py-3 bg-gradient-to-r from-[#2c72b0] to-[#3ba59a] text-white font-semibold rounded-full shadow-lg shadow-teal-500/20 hover:scale-105 hover:shadow-teal-500/30 transition-all duration-300">
+                    تحدث مع فريقنا
+                </a>
             </div>
-
-            <!-- بطاقة 3 -->
-            <div
-                class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group flex flex-col justify-between">
-                <div class="overflow-hidden rounded-xl bg-gray-50 border border-gray-100 mb-4 h-64">
-                    <img src="https://via.placeholder.com/400x500" alt="صندوق رشد العائلي"
-                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="flex items-center justify-between pt-1">
-                    <span class="font-bold text-gray-800 text-sm">صندوق رشد العائلي</span>
-                    <a href="#"
-                        class="p-1.5 rounded-lg bg-gray-50 text-gray-400 group-hover:text-[#2a527c] transition-colors">
-                        <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- يمكنك تكرار عنصر الـ Card حسب عدد مشاريعك -->
 
         </div>
     </section>
+    <!-- نهاية قسم الأسئلة الشائعة -->
+
+
+    <!-- footerبداية  -->
+
+    <footer
+        class="bg-gradient-to-r from-[#1d3573] via-[#1a5b82] to-[#127d92] text-white pt-12 pb-6 px-4 sm:px-8 md:px-12 mb-0"
+        dir="rtl">
+        <div class="max-w-7xl mx-auto space-y-12">
+
+            <!-- القسم العلوي: 4 أعمدة -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-right items-start">
+
+                <!-- العمود الأول: الشعار والوصف ووسائل التواصل الاجتماعي -->
+                <div class="space-y-4">
+                    <!-- الشعار -->
+                    <div>
+                        <img src="https://assar.sa/wp-content/uploads/2025/02/Group-copy.png" alt="عصر التحول"
+                            class="h-14 object-contain">
+                    </div>
+                    <!-- النص الوصفي -->
+                    <p class="text-[13px] text-cyan-100/90 leading-relaxed max-w-xs">
+                        عصر تحول تقنية المعلومات<br>
+                        شريكك الموثوق نحو مستقبل رقمي مبتكر، حيث نجمع بين الإبداع والتقنية لتحقيق رؤيتك.
+                    </p>
+                    <!-- أزرار التواصل الاجتماعي الدائرية -->
+                    <div class="flex items-center gap-2.5 text-white pt-2">
+                        <a href="#"
+                            class="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-xs hover:bg-white/20 transition-all"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-xs hover:bg-white/20 transition-all"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-xs hover:bg-white/20 transition-all"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-xs hover:bg-white/20 transition-all"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-xs hover:bg-white/20 transition-all"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- العمود الثاني: روابط سريعة -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-base text-white border-b-2 border-cyan-300/40 pb-1 inline-block">روابط
+                        سريعة</h3>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-cyan-100/90">
+                        <li><a href="#" class="hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">من نحن</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">تواصل معنا</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">سياسة الاسترجاع</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+
+                <!-- العمود الثالث: تواصل معنا -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-base text-white border-b-2 border-cyan-300/40 pb-1 inline-block">تواصل
+                        معنا</h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-cyan-100/90">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-sm"></i>
+                            <span dir="ltr">000 000 0000</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-regular fa-envelope text-sm"></i>
+                            <span>contact@assar.sa</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-sm mt-1"></i>
+                            <span class="leading-relaxed text-[12px]">الرياض - الورود - شارع 4229 - شارع 18 نوفمبر -
+                                بناء رقم 1/1665 - الطابق الرابع - رقم المكتب 44</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- العمود الرابع: تفاصيل الدفع وبطاقة الأيبان -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-base text-white">تفاصيل الدفع</h3>
+                    <p class="font-bold text-sm text-white">ادفع بسهوله في أي مكان</p>
+                    <p class="text-xs text-cyan-100/90 leading-relaxed">
+                        قم بالتحويل بسهولة باستخدام المعلومات البنكية أدناه لإتمام معاملتك بكل أمان.
+                    </p>
+
+                    <div
+                        class="border border-white/50 rounded-2xl p-3 flex items-center justify-between bg-white/5 backdrop-blur-md mt-4">
+                        <div
+                            class="bg-white p-1 rounded-xl w-14 h-14 flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+                            <img src="https://assar.sa/wp-content/uploads/2025/02/Alahli-QR-Code.jpg" alt="كود الدفع"
+                                class="w-full h-full object-contain">
+                        </div>
+                        <div class="text-right space-y-1">
+                            <p class="text-xs font-bold text-white">رقم الأيبان</p>
+                            <p class="text-[10px] sm:text-[11px] font-mono text-white tracking-widest" dir="ltr">
+                                SA4105000068205980611000</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- الخط الفاصل والنص السفلي للحقوق -->
+            <div class="border-t border-white/20 pt-5 text-center">
+                <p class="text-xs text-cyan-100/80">
+                    © عصر التحول 2025 . جميع الحقوق محفوظة لمؤسسة عصر التحول
+                </p>
+            </div>
+
+        </div>
+    </footer>
+    <!--  نهايةfooter  -->
+
+
     <script src="js/script.js"></script>
 </body>
 

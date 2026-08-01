@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول / إنشاء حساب</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/output.css">
+</head>
+
+<body class="bg-[#f8fafc] min-h-screen flex items-center justify-center relative font-sans p-4">
+
+    <!-- الشعار في الزاوية العلوية اليمنى -->
+    <div class="absolute top-6 right-6 sm:top-8 sm:right-8">
+        <a href="index.html">
+            <img src="https://cp.assar.sa/assets/logo-DN-LF2-f.png" alt="عصر التحول" class="h-12 object-contain">
+        </a>
+    </div>
+
+    <!-- 1. واجهة تسجيل الدخول -->
+    <div id="loginCard"
+        class="w-full max-w-md bg-white rounded-3xl border border-gray-100 shadow-xl shadow-slate-200/50 p-8 sm:p-10 my-12 text-center transition-all duration-300">
+
+        <div class="flex justify-center mb-4">
+            <img src="https://cp.assar.sa/assets/logo-DN-LF2-f.png" alt="عصر التحول" class="h-16 object-contain">
+        </div>
+
+        <h1 class="text-2xl font-bold text-[#1e4d63] mb-1">تسجيل الدخول إلى الحساب</h1>
+        <p class="text-xs text-gray-400 mb-6">ادخل البريد الإلكتروني أو رقم الهاتف وكلمة المرور</p>
+
+        <form class="space-y-4 text-right">
+            <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5">عنوان البريد الإلكتروني</label>
+                <input type="text" placeholder="البريد الإلكتروني"
+                    class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:border-teal-500 focus:outline-none transition-all text-right">
+            </div>
+
+            <div>
+                <div class="flex justify-between items-center mb-1.5">
+                    <label class="block text-xs font-semibold text-gray-600">كلمة المرور</label>
+                    <button type="button" id="showForgotPasswordBtn"
+                        class="text-xs text-gray-500 hover:text-teal-600 transition-colors focus:outline-none">هل نسيت
+                        كلمة المرور؟</button>
+                </div>
+                <div class="relative">
+                    <input id="loginPassword" type="password" placeholder="كلمة المرور"
+                        class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:border-teal-500 focus:outline-none transition-all text-right tracking-widest">
+                    <button type="button" id="toggleLoginPassword"
+                        class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <i class="fa-regular fa-eye-slash text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 pt-1">
+                <input type="checkbox" id="remember"
+                    class="w-4 h-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500 accent-teal-600">
+                <label for="remember" class="text-xs text-gray-600 select-none">تذكر كلمة المرور</label>
+            </div>
+
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-[#4483a3] to-[#4fa199] hover:opacity-95 text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-sm mt-2">
+                تسجيل الدخول
+            </button>
+        </form>
+
+        <p class="text-xs text-gray-500 my-5">
+            ليس لديك حساب؟
+            <button type="button" id="showRegisterBtn"
+                class="text-[#1e4d63] font-bold hover:underline focus:outline-none">إنشاء حساب</button>
+        </p>
+
+        <div class="grid grid-cols-2 gap-3 pt-2">
+            <button type="button"
+                class="flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-2.5 px-3 hover:bg-gray-50 transition-colors text-xs font-medium text-gray-700">
+                <i class="fa-brands fa-facebook text-blue-600 text-base"></i>
+                <span>الدخول باستخدام فيسبوك</span>
+            </button>
+            <button type="button"
+                class="flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-2.5 px-3 hover:bg-gray-50 transition-colors text-xs font-medium text-gray-700">
+                <i class="fa-brands fa-google text-red-500 text-base"></i>
+                <span>الدخول باستخدام Google</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 2. واجهة إنشاء حساب جديد -->
+    <div id="registerCard"
+        class="hidden w-full max-w-md bg-white rounded-3xl border border-gray-100 shadow-xl shadow-slate-200/50 p-8 sm:p-10 my-12 text-center transition-all duration-300">
+
+        <div class="flex justify-center mb-4">
+            <img src="https://cp.assar.sa/assets/logo-DN-LF2-f.png" alt="عصر التحول" class="h-16 object-contain">
+        </div>
+
+        <h1 class="text-2xl font-bold text-[#1e4d63] mb-1">إنشاء حساب جديد</h1>
+        <p class="text-xs text-gray-400 mb-6">أدخل بياناتك لإنشاء حساب جديد</p>
+
+        <form class="space-y-4 text-right">
+            <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5">الاسم</label>
+                <input type="text" placeholder="الاسم"
+                    class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:border-teal-500 focus:outline-none transition-all text-right">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5">رقم الهاتف</label>
+                <input type="text" placeholder="رقم الهاتف"
+                    class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:border-teal-500 focus:outline-none transition-all text-right">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5">البريد الإلكتروني</label>
+                <input type="email" placeholder="user.user@gmail.com"
+                    class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:border-teal-500 focus:outline-none transition-all text-right">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5">كلمة المرور</label>
+                <div class="relative">
+                    <input id="regPassword" type="password" placeholder="كلمة المرور"
+                        class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:border-teal-500 focus:outline-none transition-all text-right tracking-widest">
+                    <button type="button" id="toggleRegPassword"
+                        class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <i class="fa-regular fa-eye-slash text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5">تأكيد كلمة المرور</label>
+                <div class="relative">
+                    <input id="regConfirmPassword" type="password" placeholder="تأكيد كلمة المرور"
+                        class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:border-teal-500 focus:outline-none transition-all text-right tracking-widest">
+                    <button type="button" id="toggleRegConfirmPassword"
+                        class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <i class="fa-regular fa-eye-slash text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-[#4483a3] to-[#4fa199] hover:opacity-95 text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-sm mt-2">
+                إنشاء حساب
+            </button>
+        </form>
+
+        <p class="text-xs text-gray-500 my-5">
+            لديك حساب بالفعل؟
+            <button type="button" id="showLoginBtn"
+                class="text-[#1e4d63] font-bold hover:underline focus:outline-none">تسجيل الدخول</button>
+        </p>
+
+        <div class="grid grid-cols-2 gap-3 pt-2">
+            <button type="button"
+                class="flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-2.5 px-3 hover:bg-gray-50 transition-colors text-xs font-medium text-gray-700">
+                <i class="fa-brands fa-facebook text-blue-600 text-base"></i>
+                <span>الدخول باستخدام فيسبوك</span>
+            </button>
+            <button type="button"
+                class="flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-2.5 px-3 hover:bg-gray-50 transition-colors text-xs font-medium text-gray-700">
+                <i class="fa-brands fa-google text-red-500 text-base"></i>
+                <span>الدخول باستخدام Google</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 3. واجهة نسيت كلمة المرور -->
+    <div id="forgotPasswordCard"
+        class="hidden w-full max-w-md bg-white rounded-3xl border border-gray-100 shadow-xl shadow-slate-200/50 p-8 sm:p-10 my-12 text-center transition-all duration-300">
+
+        <h1 class="text-2xl font-bold text-[#1e4d63] mb-2">نسيت كلمة المرور</h1>
+        <p class="text-xs text-gray-400 mb-6 leading-relaxed">قم بكتابة الإيميل الذي قمت بالتسجيل الدخول به، لإرسال رابط
+            تعيين كلمة المرور إليه.</p>
+
+        <form id="forgotForm" class="space-y-5 text-right">
+            <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5">البريد الإلكتروني</label>
+                <input type="email" required placeholder="user.user@gmail.com"
+                    class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:border-teal-500 focus:outline-none transition-all text-right">
+            </div>
+
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-[#4483a3] to-[#4fa199] hover:opacity-95 text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-sm">
+                التالي
+            </button>
+        </form>
+
+        <button type="button"
+            class="backToLogin text-xs text-gray-400 hover:text-gray-600 mt-6 inline-block transition-colors">
+            <i class="fa-solid fa-arrow-right ml-1"></i> العودة لتسجيل الدخول
+        </button>
+    </div>
+
+    <!-- 4. واجهة رمز التحقق -->
+    <div id="verifyCodeCard"
+        class="hidden w-full max-w-md bg-white rounded-3xl border border-gray-100 shadow-xl shadow-slate-200/50 p-8 sm:p-10 my-12 text-center transition-all duration-300">
+
+        <h1 class="text-2xl font-bold text-[#1e4d63] mb-2">رمز التحقّق</h1>
+        <p class="text-xs text-gray-400 mb-6">أدخل رمز التحقق المرسل إلى إيميلك</p>
+
+        <form id="verifyForm" class="space-y-6">
+            <div class="flex justify-center gap-2 sm:gap-3 dir-ltr" dir="ltr">
+                <input type="text" maxlength="1"
+                    class="otp-input w-12 h-12 text-center text-lg font-bold bg-[#f1f5f9] border border-transparent rounded-xl focus:bg-white focus:border-teal-500 focus:outline-none transition-all">
+                <input type="text" maxlength="1"
+                    class="otp-input w-12 h-12 text-center text-lg font-bold bg-[#f1f5f9] border border-transparent rounded-xl focus:bg-white focus:border-teal-500 focus:outline-none transition-all">
+                <input type="text" maxlength="1"
+                    class="otp-input w-12 h-12 text-center text-lg font-bold bg-[#f1f5f9] border border-transparent rounded-xl focus:bg-white focus:border-teal-500 focus:outline-none transition-all">
+                <input type="text" maxlength="1"
+                    class="otp-input w-12 h-12 text-center text-lg font-bold bg-[#f1f5f9] border border-transparent rounded-xl focus:bg-white focus:border-teal-500 focus:outline-none transition-all">
+            </div>
+
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-[#4483a3] to-[#4fa199] hover:opacity-95 text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-sm">
+                المتابعة
+            </button>
+        </form>
+
+        <div class="mt-5 text-xs text-gray-400 flex items-center justify-center gap-1">
+            <span>إعادة إرسال رمز التحقق</span>
+            <span id="timer" class="font-bold text-gray-600">00:59</span>
+        </div>
+    </div>
+
+    <!-- 5. واجهة تعيين كلمة المرور الجديدة -->
+    <div id="resetPasswordCard"
+        class="hidden w-full max-w-md bg-white rounded-3xl border border-gray-100 shadow-xl shadow-slate-200/50 p-8 sm:p-10 my-12 text-center transition-all duration-300">
+
+        <h1 class="text-2xl font-bold text-[#1e4d63] mb-2">تعيين كلمة المرور الجديدة</h1>
+        <p class="text-xs text-gray-400 mb-6 leading-relaxed">قم بتعيين كلمة المرور الجديدة لحسابك حتى تتمكن من تسجيل
+            الدخول</p>
+
+        <form id="resetForm" class="space-y-4 text-right" novalidate>
+            <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5">كلمة المرور الجديدة</label>
+                <div class="relative">
+                    <input id="newPassword" type="password" placeholder="••••••••"
+                        class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:outline-none transition-all text-right tracking-widest">
+                    <button type="button" id="toggleNewPassword"
+                        class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <i class="fa-regular fa-eye-slash text-sm"></i>
+                    </button>
+                </div>
+                <!-- مكان رسالة الخطأ لكلية المرور الجديدة -->
+                <span id="newPasswordError" class="hidden text-[11px] text-red-500 mt-1 block"></span>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5">تأكيد كلمة المرور الجديدة</label>
+                <div class="relative">
+                    <input id="confirmNewPassword" type="password" placeholder="••••••••"
+                        class="w-full bg-[#f1f5f9] border border-transparent rounded-xl px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:bg-white focus:outline-none transition-all text-right tracking-widest">
+                    <button type="button" id="toggleConfirmNewPassword"
+                        class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <i class="fa-regular fa-eye-slash text-sm"></i>
+                    </button>
+                </div>
+                <!-- مكان رسالة الخطأ للتأكيد -->
+                <span id="confirmPasswordError" class="hidden text-[11px] text-red-500 mt-1 block"></span>
+            </div>
+
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-[#4483a3] to-[#4fa199] hover:opacity-95 text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-sm mt-2">
+                تأكيد
+            </button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
